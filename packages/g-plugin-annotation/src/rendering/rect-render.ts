@@ -51,7 +51,6 @@ export const renderRect = (context: AnnotationPlugin, anno: DrawerState) => {
 
   rect.addEventListener('mousedown', () => {
     context.freezeDrawer();
-    context.setActiveAnnotation(anno.id);
   });
 
   rect.addEventListener('mouseup', () => {

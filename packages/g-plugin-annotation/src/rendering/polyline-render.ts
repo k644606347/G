@@ -1,5 +1,5 @@
 import { Polyline } from '@antv/g';
-import { DASH_LINE_STYLE, DEFAULT_LINE_HOVER_STYLE, DEFAULT_LINE_STYLE } from '../constants/style';
+import { DASH_LINE_STYLE, DEFAULT_LINE_STYLE } from '../constants/style';
 import type { DrawerState } from '../interface/drawer';
 import { renderDrawLine } from './drawline-render';
 import { renderDrawPoints } from './drawPoint-render';
@@ -33,22 +33,4 @@ export const renderPolyline = (context, anno: DrawerState) => {
     id: `${anno.id}-polyline`,
   });
   context.canvas?.appendChild(polyline);
-
-  polyline.addEventListener('mouseover', () => {
-    polyline.attr(DEFAULT_LINE_HOVER_STYLE);
-  });
-
-  polyline.addEventListener('mouseout', () => {
-    polyline.attr(DEFAULT_LINE_STYLE);
-  });
-
-  polyline.addEventListener('mousedown', (e) => {
-    context.setActiveAnnotation(anno.id);
-    e.stopPropagation();
-  });
-
-  polyline.addEventListener('mousedown', (e) => {
-    context.setActiveAnnotation(anno.id);
-    e.stopPropagation();
-  });
 };

@@ -22,28 +22,4 @@ export const renderPolygon = (context, anno: DrawerState) => {
   renderDrawPoints(context, anno);
   renderDrawLine(context, anno);
   renderDrawingLine(context, anno);
-
-  // if (!anno.isDrawing) {
-  //   const polygon = new Polygon({
-  //     style: {
-  //       points: anno.path.map((p) => [p.x, p.y]),
-  //       ...DEFAULT_STYLE,
-  //     },
-  //     className: anno.id,
-  //     id: anno.id,
-  //   });
-
-  //   polygon.addEventListener('mousedown', (e) => {
-  //     context.freezeDrawer();
-  //     context.setActiveAnnotation(anno.id);
-  //     e.stopPropagation();
-  //   });
-
-  //   polygon.addEventListener('mouseup', (e) => {
-  //     context.unfreezeDrawer();
-  //     e.stopPropagation();
-  //   });
-
-  //   context.canvas?.appendChild(polygon);
-  // }
 };

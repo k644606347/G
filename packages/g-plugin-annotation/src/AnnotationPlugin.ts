@@ -72,14 +72,6 @@ export class AnnotationPlugin implements RenderingPlugin {
   }
 
   /**
-   * 激活标注
-   * @param id
-   */
-  setActiveAnnotation = (id: string) => {
-    // TODO
-  };
-
-  /**
    * 使用绘制工具
    * @param tool
    * @param options
@@ -207,21 +199,6 @@ export class AnnotationPlugin implements RenderingPlugin {
       if (this.drawer?.isDrawing) {
         handleDrawerKeyDown(e);
       }
-
-      const active = this.drawer;
-      if (e.key === 'ArrowLeft') {
-        active.path = active.path.map((point) => ({ x: point.x - 1, y: point.y }));
-      }
-      if (e.key === 'ArrowUp') {
-        active.path = active.path.map((point) => ({ x: point.x, y: point.y - 1 }));
-      }
-      if (e.key === 'ArrowRight') {
-        active.path = active.path.map((point) => ({ x: point.x + 1, y: point.y }));
-      }
-      if (e.key === 'ArrowDown') {
-        active.path = active.path.map((point) => ({ x: point.x, y: point.y + 1 }));
-      }
-      // this.renderDrawer(active);
     };
 
     const handleCanvasEnter = () => {

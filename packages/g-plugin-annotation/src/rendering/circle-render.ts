@@ -19,7 +19,6 @@ export const renderCircle = (context: AnnotationPlugin, anno: DrawerState) => {
 
   circle.addEventListener('mousedown', (e: FederatedEvent) => {
     context.freezeDrawer();
-    context.setActiveAnnotation(anno.id);
     e.stopPropagation();
   });
 
